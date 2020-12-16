@@ -5,8 +5,6 @@ VisualStudioVersion = 16.0.30804.86
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NMEA Parser", "..\..\lastTry\NMEA Parser\NMEA Parser.csproj", "{5A8C6DAE-6197-4144-A10D-CAF5BF6F6E5A}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ParsingManager", "..\..\lastTry\ParsingManager\ParsingManager.csproj", "{B69E6C17-2C80-49C8-B879-76B2165F70D0}"
-EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ParsingManager.DL", "..\..\lastTry\ParsingManager.DL\ParsingManager.DL.csproj", "{988D308B-693D-42CF-A518-A4ED0725C761}"
 EndProject
 Global
@@ -19,10 +17,6 @@ Global
 		{5A8C6DAE-6197-4144-A10D-CAF5BF6F6E5A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5A8C6DAE-6197-4144-A10D-CAF5BF6F6E5A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5A8C6DAE-6197-4144-A10D-CAF5BF6F6E5A}.Release|Any CPU.Build.0 = Release|Any CPU
-		{B69E6C17-2C80-49C8-B879-76B2165F70D0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{B69E6C17-2C80-49C8-B879-76B2165F70D0}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{B69E6C17-2C80-49C8-B879-76B2165F70D0}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{B69E6C17-2C80-49C8-B879-76B2165F70D0}.Release|Any CPU.Build.0 = Release|Any CPU
 		{988D308B-693D-42CF-A518-A4ED0725C761}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{988D308B-693D-42CF-A518-A4ED0725C761}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{988D308B-693D-42CF-A518-A4ED0725C761}.Release|Any CPU.ActiveCfg = Release|Any CPU
