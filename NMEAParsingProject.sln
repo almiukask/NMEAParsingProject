@@ -7,8 +7,6 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NMEA Parser", "..\..\lastTr
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ParsingManager.DL", "..\..\lastTry\ParsingManager.DL\ParsingManager.DL.csproj", "{988D308B-693D-42CF-A518-A4ED0725C761}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ParsingManager", "..\..\lastTry\ParsingManager\ParsingManager.csproj", "{C2EB4490-5CBA-47EE-84EB-CD7C52F8DC94}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -23,10 +21,6 @@ Global
 		{988D308B-693D-42CF-A518-A4ED0725C761}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{988D308B-693D-42CF-A518-A4ED0725C761}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{988D308B-693D-42CF-A518-A4ED0725C761}.Release|Any CPU.Build.0 = Release|Any CPU
-		{C2EB4490-5CBA-47EE-84EB-CD7C52F8DC94}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{C2EB4490-5CBA-47EE-84EB-CD7C52F8DC94}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{C2EB4490-5CBA-47EE-84EB-CD7C52F8DC94}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{C2EB4490-5CBA-47EE-84EB-CD7C52F8DC94}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
