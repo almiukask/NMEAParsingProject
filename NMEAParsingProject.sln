@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30804.86
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NMEAParsingProject", "NMEAParsingProject\NMEAParsingProject.csproj", "{F3A6176A-E77B-4A01-B9E9-84E4DE86C084}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F3A6176A-E77B-4A01-B9E9-84E4DE86C084}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F3A6176A-E77B-4A01-B9E9-84E4DE86C084}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F3A6176A-E77B-4A01-B9E9-84E4DE86C084}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F3A6176A-E77B-4A01-B9E9-84E4DE86C084}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {E2FF5C37-595A-4DDA-8C34-128EDD13761B}
+	EndGlobalSection
+EndGlobal
