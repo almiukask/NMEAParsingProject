@@ -3,9 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30804.86
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NMEA Parser", "..\..\lastTry\NMEA Parser\NMEA Parser.csproj", "{5A8C6DAE-6197-4144-A10D-CAF5BF6F6E5A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NMEA Parser", "NMEA Parser\NMEA Parser.csproj", "{BB15BA90-3AB7-4D78-9690-F96A488308A9}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ParsingManager.DL", "..\..\lastTry\ParsingManager.DL\ParsingManager.DL.csproj", "{988D308B-693D-42CF-A518-A4ED0725C761}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ParsingManager.DL", "ParsingManager.DL\ParsingManager.DL.csproj", "{FB5F4269-E74D-48D4-B84C-9F8F5E8E5B2B}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ParsingManager", "ParsingManager\ParsingManager.csproj", "{6F445143-6326-4BF6-9296-CBDB45D21F68}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -13,14 +15,18 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{5A8C6DAE-6197-4144-A10D-CAF5BF6F6E5A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{5A8C6DAE-6197-4144-A10D-CAF5BF6F6E5A}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{5A8C6DAE-6197-4144-A10D-CAF5BF6F6E5A}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{5A8C6DAE-6197-4144-A10D-CAF5BF6F6E5A}.Release|Any CPU.Build.0 = Release|Any CPU
-		{988D308B-693D-42CF-A518-A4ED0725C761}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{988D308B-693D-42CF-A518-A4ED0725C761}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{988D308B-693D-42CF-A518-A4ED0725C761}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{988D308B-693D-42CF-A518-A4ED0725C761}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BB15BA90-3AB7-4D78-9690-F96A488308A9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BB15BA90-3AB7-4D78-9690-F96A488308A9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BB15BA90-3AB7-4D78-9690-F96A488308A9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BB15BA90-3AB7-4D78-9690-F96A488308A9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FB5F4269-E74D-48D4-B84C-9F8F5E8E5B2B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FB5F4269-E74D-48D4-B84C-9F8F5E8E5B2B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FB5F4269-E74D-48D4-B84C-9F8F5E8E5B2B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FB5F4269-E74D-48D4-B84C-9F8F5E8E5B2B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6F445143-6326-4BF6-9296-CBDB45D21F68}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6F445143-6326-4BF6-9296-CBDB45D21F68}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6F445143-6326-4BF6-9296-CBDB45D21F68}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6F445143-6326-4BF6-9296-CBDB45D21F68}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
