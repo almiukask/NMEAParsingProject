@@ -39,7 +39,6 @@ namespace NMEA_Parser
 			StringBuilder pathsToShow = new StringBuilder();
 			if (openFileDialog1.ShowDialog() == System.Windows.Forms.DialogResult.OK)
             {
-				//string[] names=openFileDialog1.FileNames;
 				List<Vehicle> DUTs = new List<Vehicle>();
 				int counter = 0;
 				foreach (var name in openFileDialog1.FileNames)
@@ -62,8 +61,6 @@ namespace NMEA_Parser
 				LoadDataToGrid(DUTs, openFileDialog1.SafeFileNames);
 				
 			}
-			
-
 		}
 		void PrepareGridView()
 		{
