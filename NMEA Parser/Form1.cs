@@ -43,9 +43,9 @@ namespace NMEA_Parser
 				int counter = 0;
 				foreach (var name in openFileDialog1.FileNames)
 				{
-					byte[] File;
+					List<string> File;
 					_uploader= new FileUploader();
-					File = _uploader.ReadFileStream(name);
+					File = _uploader.ReadFileLines(name);
 					_fileHandler = new DataManager();
 					_fileHandler.CreateInstances(File);
 					DUTs.Add(new Vehicle { Data = _fileHandler.GetInstances() });

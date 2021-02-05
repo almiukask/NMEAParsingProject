@@ -6,6 +6,6 @@ namespace ParsingManager.DL.Services
 {
 	public interface IFileUploader
 	{
-		public byte[] ReadFileStream(string filename);
+		List<string> ReadFileLines(string filename);
 	}
 }

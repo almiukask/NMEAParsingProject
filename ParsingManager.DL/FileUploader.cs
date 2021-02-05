@@ -1,22 +1,25 @@
 ﻿using System;
 using System.Text;
 using System.Threading.Tasks;
+using System.Collections.Generic;
 using System.IO;
 using ParsingManager.DL.Services;
+using System.Text.RegularExpressions;
 
 namespace ParsingManager.DL
 {
 	public class FileUploader : IFileUploader
 	{
-        public byte[] ReadFileStream(string filename)
+        public List<string> ReadFileLines(string filename)
         {
-            byte[] Buffer;
-            using (FileStream SourceStream = File.Open(filename, FileMode.Open))
+            List<string> lines = new List<string>();
+            foreach (var line in File.ReadLines(filename))
             {
-                Buffer = new byte[SourceStream.Length];
-                SourceStream.Read(Buffer, 0, (int)SourceStream.Length);
+                var match0 = Regex.Matches(line, @"\$G([A-Z]{4}),(.*?)\*([0-9A-F]{2})", RegexOptions.Singleline);
+                if (match0 != null)
+                    foreach (Match mVotes in match0) lines.Add(mVotes.Value);
             }
-            return Buffer;
+            return lines;
         }
 
 
