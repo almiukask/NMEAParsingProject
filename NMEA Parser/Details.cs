@@ -34,7 +34,7 @@ namespace NMEA_Parser
 		private void ConstructColumns()
 		{
 
-			DetailedInfoGrid.Columns.Add("Device", "Device");
+			DetailedInfoGrid.Columns.Add("No", "No");
 			DetailedInfoGrid.Columns.Add("UTC", "UTC");
 			DetailedInfoGrid.Columns.Add("SVs Tracked", "SVs Tracked");
 			DetailedInfoGrid.Columns.Add("SV C/N0", "SV C/N0");
@@ -81,7 +81,7 @@ namespace NMEA_Parser
 				lon,
 				X,
 				Y,
-				dat.MSLAltitude,
+				dat.MSLAltitude+dat.GeoidSeparation,
 				dat.Speed
 				});
 			}
