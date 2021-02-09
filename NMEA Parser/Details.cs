@@ -43,8 +43,8 @@ namespace NMEA_Parser
 			DetailedInfoGrid.Columns.Add("Lon", "Lon");
 			DetailedInfoGrid.Columns.Add("X", "X");
 			DetailedInfoGrid.Columns.Add("Y", "Y");
-			DetailedInfoGrid.Columns.Add("Alt(HAE)", "Alt (HAE)");
-			DetailedInfoGrid.Columns.Add("SoG", "SoG");
+			DetailedInfoGrid.Columns.Add("Alt(HAE)", "Alt (HAE)"); //MSLGeoidSeparation expected in meters
+			DetailedInfoGrid.Columns.Add("SoG", "SoG"); //expected to be in m/s
 		}
 		void PrepareGridView()
 		{
@@ -93,9 +93,16 @@ namespace NMEA_Parser
 			double latinRad = lat/180 * Math.PI;
 			double lonInRad = lon/180 * Math.PI;
 			double N = a / (Math.Sqrt(1 - (eSqrd * (Math.Sin(latinRad) * Math.Sin(latinRad)))));
-			X = (N + alt) * Math.Cos(latinRad) * Math.Cos(lonInRad);
-			Y = (N + alt) * Math.Cos(latinRad) * Math.Sin(lonInRad);
-			Z = (((1-eSqrd) * N) + alt) * Math.Sin(latinRad);
+			if (lat != 0 && lon != 0 && alt != 0)
+			{
+				X = (N + alt) * Math.Cos(latinRad) * Math.Cos(lonInRad);
+				Y = (N + alt) * Math.Cos(latinRad) * Math.Sin(lonInRad);
+				Z = (((1 - eSqrd) * N) + alt) * Math.Sin(latinRad);
+			}
+			else
+			{
+				X = 0; Y = 0; Z = 0;
+			}
 
 		}
 		double CalculateDecimalDegrees(double degMinSec, char hemisphere)
@@ -104,7 +111,7 @@ namespace NMEA_Parser
 			double minutes = (int)(degMinSec % 100);
 			double seconds = (degMinSec % 1)*100;
 			double Calculated = degrees + minutes / 60 + seconds / 3600;
-			return hemisphere.Equals('N')||hemisphere.Equals('E')? Calculated: Calculated*-1;
+			return hemisphere.Equals('N')||hemisphere.Equals('E')||hemisphere.Equals('\0')? Calculated: Calculated*-1;
 		}
 
 	}
