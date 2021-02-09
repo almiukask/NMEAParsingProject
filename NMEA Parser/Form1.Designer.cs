@@ -34,6 +34,7 @@ namespace NMEA_Parser
 			this.DataGrid = new System.Windows.Forms.DataGridView();
 			this.LoadFileBtn = new System.Windows.Forms.Button();
 			this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
+			this.btn_Details = new System.Windows.Forms.Button();
 			((System.ComponentModel.ISupportInitialize)(this.DataGrid)).BeginInit();
 			this.SuspendLayout();
 			// 
@@ -42,7 +43,7 @@ namespace NMEA_Parser
 			this.txtFilepath.Location = new System.Drawing.Point(10, 27);
 			this.txtFilepath.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
 			this.txtFilepath.Name = "txtFilepath";
-			this.txtFilepath.Size = new System.Drawing.Size(791, 23);
+			this.txtFilepath.Size = new System.Drawing.Size(694, 23);
 			this.txtFilepath.TabIndex = 1;
 			// 
 			// lblFilePath
@@ -64,13 +65,14 @@ namespace NMEA_Parser
 			this.DataGrid.RowTemplate.Height = 29;
 			this.DataGrid.Size = new System.Drawing.Size(926, 305);
 			this.DataGrid.TabIndex = 3;
+			this.DataGrid.SelectionChanged += new System.EventHandler(this.DataGrid_SelectionChanged);
 			// 
 			// LoadFileBtn
 			// 
-			this.LoadFileBtn.Location = new System.Drawing.Point(807, 26);
+			this.LoadFileBtn.Location = new System.Drawing.Point(710, 26);
 			this.LoadFileBtn.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
 			this.LoadFileBtn.Name = "LoadFileBtn";
-			this.LoadFileBtn.Size = new System.Drawing.Size(128, 22);
+			this.LoadFileBtn.Size = new System.Drawing.Size(122, 24);
 			this.LoadFileBtn.TabIndex = 8;
 			this.LoadFileBtn.Text = "Select and Read";
 			this.LoadFileBtn.UseVisualStyleBackColor = true;
@@ -82,11 +84,22 @@ namespace NMEA_Parser
 			this.openFileDialog1.Multiselect = true;
 			this.openFileDialog1.FileOk += new System.ComponentModel.CancelEventHandler(this.OpenFileDialog1_FileOk);
 			// 
+			// btn_Details
+			// 
+			this.btn_Details.Location = new System.Drawing.Point(838, 26);
+			this.btn_Details.Name = "btn_Details";
+			this.btn_Details.Size = new System.Drawing.Size(97, 24);
+			this.btn_Details.TabIndex = 9;
+			this.btn_Details.Text = "Details";
+			this.btn_Details.UseVisualStyleBackColor = true;
+			this.btn_Details.Click += new System.EventHandler(this.btn_Details_Click);
+			// 
 			// Form1
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.ClientSize = new System.Drawing.Size(947, 368);
+			this.Controls.Add(this.btn_Details);
 			this.Controls.Add(this.LoadFileBtn);
 			this.Controls.Add(this.DataGrid);
 			this.Controls.Add(this.lblFilePath);
@@ -108,6 +121,7 @@ namespace NMEA_Parser
 		private System.Windows.Forms.DataGridView DataGrid;
 		private System.Windows.Forms.Button LoadFileBtn;
 		private System.Windows.Forms.OpenFileDialog openFileDialog1;
+		private System.Windows.Forms.Button btn_Details;
 	}
 }
 

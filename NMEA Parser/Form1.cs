@@ -21,6 +21,8 @@ namespace NMEA_Parser
 		IFileUploader _uploader; 
 		IDataManager _fileHandler;
 		IDataInterpreter _interpreter;
+		public int GridSelection { get; set; }
+		public List<Vehicle> DUTsToShow { get; set; }
 		public Form1()
 		{
 			InitializeComponent();
@@ -39,7 +41,7 @@ namespace NMEA_Parser
 			StringBuilder pathsToShow = new StringBuilder();
 			if (openFileDialog1.ShowDialog() == System.Windows.Forms.DialogResult.OK)
             {
-				List<Vehicle> DUTs = new List<Vehicle>();
+				DUTsToShow = new List<Vehicle>();
 				int counter = 0;
 				foreach (var name in openFileDialog1.FileNames)
 				{
@@ -48,9 +50,9 @@ namespace NMEA_Parser
 					File = _uploader.ReadFileLines(name);
 					_fileHandler = new DataManager();
 					_fileHandler.CreateInstances(File);
-					DUTs.Add(new Vehicle { Data = _fileHandler.GetInstances() });
+					DUTsToShow.Add(new Vehicle { Data = _fileHandler.GetInstances() });
 					_interpreter = new DataInterpreter();
-					_interpreter.CalculateAverages(DUTs[counter]);
+					_interpreter.CalculateAverages(DUTsToShow[counter]);
 					counter++;
 					pathsToShow.Append($"\"{name}\"");
 					pathsToShow.AppendLine();
@@ -58,7 +60,7 @@ namespace NMEA_Parser
 				}
 				txtFilepath.Text = pathsToShow.ToString();
 				ConstructColumns();
-				LoadDataToGrid(DUTs, openFileDialog1.SafeFileNames);
+				LoadDataToGrid(DUTsToShow, openFileDialog1.SafeFileNames);
 				
 			}
 		}
@@ -112,9 +114,18 @@ namespace NMEA_Parser
 
 		}
 
-		private void BtnLoad_Click(object sender, EventArgs e)
+		private void btn_Details_Click(object sender, EventArgs e)
 		{
+			if (DUTsToShow?.Count>0 && GridSelection< DUTsToShow?.Count)
+			{
+				Details detailed = new Details(DUTsToShow[GridSelection]);
+				detailed.ShowDialog();
+			}
+		}
 
+		private void DataGrid_SelectionChanged(object sender, EventArgs e)
+		{
+			GridSelection=DataGrid.CurrentCell.RowIndex;
 		}
 	}
 }
