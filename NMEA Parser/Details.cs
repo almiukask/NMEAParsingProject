@@ -67,15 +67,16 @@ namespace NMEA_Parser
 				double Z;
 				double lat;
 				double lon;
+				double countitySVs = dat.SatellitesInfo.Count(k => k.SatelliteCNO > 0 && k.SatelliteCNO < 99);
 				lat = CalculateDecimalDegrees(dat.Latitude, dat.DirLatitude);
 				lon = CalculateDecimalDegrees(dat.Longitude, dat.DirLongitude);
-				CalculateECF(lat, lon, dat.MSLAltitude, out X, out Y, out Z);
+				CalculateECF(lat, lon, dat.MSLAltitude+dat.GeoidSeparation, out X, out Y, out Z);
 				DetailedInfoGrid.Rows.Add(new object[]
 				{
 				i,	
 				dat.TimeStampUTC,
 				dat.QuantityOfSatellites,
-				dat.VDOP,
+				dat.AvgCNO/countitySVs,
 				dat.PDOP,
 				lat,
 				lon,
@@ -108,9 +109,9 @@ namespace NMEA_Parser
 		double CalculateDecimalDegrees(double degMinSec, char hemisphere)
 		{
 			int degrees = (int)(degMinSec / 100);
-			double minutes = (int)(degMinSec % 100);
-			double seconds = (degMinSec % 1)*100;
-			double Calculated = degrees + minutes / 60 + seconds / 3600;
+			double minutes = (degMinSec % 100);
+
+			double Calculated = degrees + minutes / 60;
 			return hemisphere.Equals('N')||hemisphere.Equals('E')||hemisphere.Equals('\0')? Calculated: Calculated*-1;
 		}
 
